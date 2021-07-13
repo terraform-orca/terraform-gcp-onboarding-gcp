@@ -1,0 +1,39 @@
+{
+  "base": [
+    "compute.snapshots.setLabels",
+    "compute.disks.createSnapshot",
+    "compute.snapshots.create",
+    "compute.snapshots.delete",
+    "storage.buckets.getIamPolicy",
+    "storage.objects.get"
+  ],
+  "inaccount_extras": [],
+  "saas_extras": [
+    "compute.snapshots.setIamPolicy",
+    "compute.snapshots.useReadOnly"
+  ],
+  "scanner": [
+    "compute.instances.create",
+    "compute.instances.delete"
+  ],
+  "organization": [
+    "serviceusage.services.enable",
+    "servicemanagement.services.bind",
+    "resourcemanager.folders.list"
+  ],
+  "api_services": [
+    "compute.googleapis.com",
+    "storage-api.googleapis.com",
+    "cloudkms.googleapis.com",
+    "cloudresourcemanager.googleapis.com",
+    "dns.googleapis.com",
+    "storage-component.googleapis.com",
+    "iam.googleapis.com",
+    "container.googleapis.com",
+    "logging.googleapis.com",
+    "monitoring.googleapis.com",
+    "bigquery.googleapis.com",
+    "sqladmin.googleapis.com",
+    "cloudasset.googleapis.com"
+  ]
+}
