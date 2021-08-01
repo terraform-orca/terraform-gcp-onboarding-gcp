@@ -44,3 +44,9 @@ resource "google_project_iam_binding" "project-binding-3" {
     "serviceAccount:service-${local.orca_production_project_number}@compute-system.iam.gserviceaccount.com",
   ]
 }
+
+resource "google_project_service" "service" {
+  count = length(local.gcp_permissions.api_services)
+  project = var.project_id
+  service = local.gcp_permissions.api_services[count.index]
+}
