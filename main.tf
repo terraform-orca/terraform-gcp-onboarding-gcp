@@ -20,7 +20,7 @@ resource "google_project_iam_custom_role" "orca-custom-role" {
   project      = var.project_id
 }
 
-resource "google_project_iam_binding" "project-binding-1" {
+resource "google_project_iam_member" "project-member-1" {
   project = var.project_id
   role    = "roles/viewer"
 
@@ -29,7 +29,7 @@ resource "google_project_iam_binding" "project-binding-1" {
   ]
 }
 
-resource "google_project_iam_binding" "project-binding-2" {
+resource "google_project_iam_member" "project-member-2" {
   project = var.project_id
   role = "projects/${var.project_id}/roles/${google_project_iam_custom_role.orca-custom-role.role_id}"
   members = [
@@ -37,7 +37,7 @@ resource "google_project_iam_binding" "project-binding-2" {
   ]
 }
 
-resource "google_project_iam_binding" "project-binding-3" {
+resource "google_project_iam_member" "project-member-3" {
   project = var.project_id
   role = "roles/cloudkms.cryptoKeyEncrypterDecrypter"
   members = [
